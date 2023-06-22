@@ -1,5 +1,6 @@
 # DCAITI Project: Street damage detection and rating
 Supervisor: Dr. Witzke, Marcus
+
 Affiliation: Daimler Center for Automotive IT Innovations, Technical University of Berlin, Berlin, Germany.
 
 # Overview of the project
