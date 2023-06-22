@@ -1,0 +1,17 @@
+1.检测 ZEB_dataset:
+python3 detect.py --weights  weights/myweights/myyolov5x.pt --img 640 --source datasets/ZEB_dataset/selected_img  --conf-thres 0.07 --iou-thres 0.30 --agnostic-nms --augment
+
+
+影响拟合的因素：
+1.检测错误（影子61_22,48_28,48_46,41_21，人行道52_33，80_16，82_21，柏林石头路，单车标志，光线，裂痕很长,水痕迹50_2，距离太远损坏模糊没识别出来69_19） 
+2.input为bdb面积，而bounding box是长方形，有些斜着的损坏实际面积小，但输入面积大。而且计算面积，直接扩大了误差。 
+3.明明有损坏但twrio和zwris数值为1：
+  <28005_43,28007_7,28017_12,22_73,39_65，47_42，47_62,48_8,52_2,56_8，71_5，76_10>
+4.个别损坏没识别出来，但是twrio大<40_2,41_51,59_6，60_35，96_15>
+5.twrio很大但是实际上损坏很小<84_2,42_45:3.43，>
+
+mAP值，在划分好的dataset下跑(jireh@jireh:~/DCAITI/yolov5)：python val.py --weights weights/MyWeights/last_95_640_16.pt --data data/road.yaml
+
+
+myyolov5x: conf-thres 0.07 --iou-thres 0.30 Done. (426.556s)
+myyolov5s:   conf-thres 0.18 --iou-thres 0.30 Done. (66.153s) 对比62_60
