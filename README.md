@@ -1,1 +1,1 @@
-# DCAITI-Project-Street-damage-detection-and-rating
+# DCAITI Project: Street damage detection and rating
