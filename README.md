@@ -5,8 +5,10 @@ Affiliation: Daimler Center for Automotive IT Innovations, Technical University 
 # Overview of the project
 1.Labeled and augmented the collected data(GRDDC and ZEB
 datasets).
+
 2.Trained YOLOv5 Model with transfer learning and Detected damage
 on ZEB image dataset.
+
 3.Defined scoring model according to the detection results, with labels
 from shapefile.
 - Random Forest Regression, Support Vector Regression, Particle
